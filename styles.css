@@ -1,9 +1,15 @@
 .container{
-    margin-inline: ' ';
-    padding: auto;
+    margin-inline: 1rem;
+    padding-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.removeBtnClass{
 
+.removeBtnClass{
+font-size: 36px;
+color: white;
+background-color: red;
 }
 .error{
 display:none;
@@ -15,8 +21,26 @@ color: red;
 }
 }
 h1{
-
+    font-size: 80px;
 }
 .listcontainer{
-
+    font-size: 36px;
+}
+body{
+    font-family: "roboto",sans-serif;
+}
+.addbutton{
+font-size: 36px;
+background-color: green;
+color: white;
+}
+.input-group{
+    font-size: 36px;
+    .input-text{
+        font-size: 36px;
+    }
+}
+.ordered-list-class{
+list-style-type: disc;
+margin-bottom: 50px;
 }

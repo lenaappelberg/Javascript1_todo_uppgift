@@ -1,5 +1,4 @@
 //posts array
-
 const posts=[
 ];
 const item={
@@ -16,9 +15,7 @@ async function getData() {
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-      console.log(response);
       const json = await response.json();
-      console.log(json);
       json.forEach(post=>posts.push(post));
       rendertodo();
     } catch (error) {
@@ -36,23 +33,20 @@ async function saveListitems(message) {
   body:JSON.stringify(message)
   })
   .then(response=>response.json())
-  .then(data=>addtodo(data._id));
+  .then(data=>addtodo(data._id,task.value));
 } 
 function rendertodo(){
   posts.forEach(post=>{
-    addtodo(post._id)
+    addtodo(post._id,post.title)
   })
 }
 //lägg till todos function
-//make foreach
-function addtodo(id){
+function addtodo(id,text){
   var itemDiv= document.createElement("div");
   const listItem=document.createElement("li");
-  const textNode= document.createTextNode(task.value);
+  const textNode= document.createTextNode(text);
   listItem.appendChild(textNode);
   listItem.id=id;
-  console.log("add remove button");
-  console.log(id);
   var buttonDiv= document.createElement('div');
     let removeBtn=document.createElement('button');
     removeBtn.classList.add('removeBtnClass');
@@ -63,7 +57,6 @@ function addtodo(id){
       removetodo(id)
       removeBtn.closest(".listcontainer").remove();
       (removeBtn.remove());
-      console.log(id)
     })
     buttonDiv.appendChild(removeBtn);
     itemDiv.appendChild(buttonDiv);
@@ -85,10 +78,7 @@ const inputFormula= document.querySelector('#inputForm');
 inputFormula.addEventListener('submit',(e)=>{
   e.preventDefault()
   validateForm(task.value)
-  console.log(task.value);
   item.title=task.value;
-  //specific post
-  console.log(posts);
   if(validateForm(task.value)==false){
     console.log(fail);
   }
