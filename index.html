@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Todo-list</h1>
+        <ol id="ordered-list" class="ordered-list-class">
+        </ol>
+        <form id="inputForm">
+            <div class="input-group">
+                <label for="task" class="task"id="testtask"></label>
+                <input type="text" id="task">
+                <p class="error"></p>
+            </div>
+            <button type="submit">Add todo</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

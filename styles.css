@@ -1,0 +1,22 @@
+.container{
+    margin-inline: ' ';
+    padding: auto;
+}
+.removeBtnClass{
+
+}
+.error{
+display:none;
+color: red;
+}
+.invalid{
+.error{
+    display: block;
+}
+}
+h1{
+
+}
+.listcontainer{
+
+}
